@@ -35,6 +35,7 @@ ENV LANG C.UTF-8
 RUN ["/bin/bash", "-c", "conda install -y gcc"]
 
 # update setuptools
+# RUN git config --global http.proxy http://192.168.31.116:7890
 RUN conda update setuptools \
     && pip install \
         numpy==1.17.0 \
@@ -42,9 +43,9 @@ RUN conda update setuptools \
         matplotlib==3.1.0 \
         seaborn==0.9.0 \
         scikit-learn==0.19.1 \
-        git+git://github.com/nilearn/nilearn.git@c0d14098c6b56381e4b527ca21986f86955cbf4f \
-        git+https://github.com/brainiak/brainiak.git@v0.7.1 \
-        git+git://github.com/ContextLab/quail.git@71dd53c792dd915dc84879d8237e3582dd68b7a4#egg=quail \
+        git+http://github.com/nilearn/nilearn.git@c0d14098c6b56381e4b527ca21986f86955cbf4f \
+        git+http://github.com/brainiak/brainiak.git@v0.7.1 \
+        git+http://github.com/ContextLab/quail.git@71dd53c792dd915dc84879d8237e3582dd68b7a4#egg=quail \
         fastdtw==0.3.2 \
         wordcloud==1.5.0 \
         pycircstat==0.0.2 \
